@@ -4,9 +4,6 @@ import h5py
 import numpy as np
 
 
-# Define chunk size
-chunk_size = 300000
-
 
 def main():
     args = parse_arguments()
@@ -16,7 +13,7 @@ def main():
 
     print(file_names)
 
-    [ProcessFile(args.input_path+"/"+f, args.output_path+"/"+f) for f in file_names]
+    [ProcessFile(args.input_path+"/"+f, args.output_path+"/"+f, args.chunk_size) for f in file_names]
         
     return 
 
